@@ -1,3 +1,4 @@
 raytracer/render
 raytracer/canvas.o
+raytracer/raytracer.o
 raytracer/output.png
