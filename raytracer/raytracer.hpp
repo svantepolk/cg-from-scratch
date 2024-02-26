@@ -21,6 +21,17 @@ typedef struct {
   uint32_t colour;
 } Sphere;
 
+typedef enum {
+  LIGHT_POINT,
+  LIGHT_DIRECTIONAL
+} LightType;
+
+typedef struct {
+  Vector3 v;
+  float intensity;
+  LightType type;
+} Light;
+
 typedef struct {
   float width;
   float height;
