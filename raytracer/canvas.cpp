@@ -10,7 +10,9 @@ void set_pixel(Canvas* c, int x, int y, uint32_t color) {
     int rectX = c->width / 2 + x;
     int rectY = c->height / 2 + y;
     if (rectX < c->width && rectY < c->height) {
-        c->buffer[rectY * c->width + rectX] = color;
+        if (rectX >= 0 && rectY >= 0) {
+            c->buffer[rectY * c->width + rectX] = color;
+        }
     }
 }
 
