@@ -30,11 +30,11 @@ int main() {
     camera.direction.y = 0.0f;
     camera.direction.z = 0.0f;
 
-    Sphere sceneObjects[4];
+    Sphere sceneObjects[5];
     sceneObjects[0].position.x = 0.0f;
-    sceneObjects[0].position.y = -1.0f;
-    sceneObjects[0].position.z = 3.0f;
-    sceneObjects[0].radius = 1.0f;
+    sceneObjects[0].position.y = 1.0f;
+    sceneObjects[0].position.z = 6.0f;
+    sceneObjects[0].radius = 1.5f;
     sceneObjects[0].colour = 0x0000FF;
 
     sceneObjects[1].position.x = 2.0f;
@@ -50,12 +50,19 @@ int main() {
     sceneObjects[2].colour = 0xFF0000;
 
     sceneObjects[3].position.x = 0.0f;
-    sceneObjects[3].position.y = 0.0f;
-    sceneObjects[3].position.z = 1.0f;
-    sceneObjects[3].radius = 0.1f;
+    sceneObjects[3].position.y = 1.0f;
+    sceneObjects[3].position.z = 3.6f;
+    sceneObjects[3].radius = 0.15f;
     sceneObjects[3].colour = 0xA28B02;
 
-    render(&canvas, &camera, sceneObjects, 4);
+    // floor
+    sceneObjects[4].radius = 100.0f;
+    sceneObjects[4].position.x = 0.0f;
+    sceneObjects[4].position.y = 101.0f;
+    sceneObjects[4].position.z = 3.0f;
+    sceneObjects[4].colour = 0xFBfBFB;
+
+    render(&canvas, &camera, sceneObjects, 5);
 
     FILE* file = fopen("output.png", "wb+");
     if (!file) {
